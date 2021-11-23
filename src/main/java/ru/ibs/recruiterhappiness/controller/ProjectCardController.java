@@ -12,21 +12,21 @@ import java.util.List;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/card")
+@RequestMapping("/api/card")
 public class ProjectCardController {
     private final ProjectCardService projectCardService;
 
-    @GetMapping("read")
+    @GetMapping("/read")
     public List<ProjectCard> getAll() {
         return projectCardService.findAll();
     }
 
-    @RequestMapping("create")
+    @RequestMapping("/create")
     public void add(@RequestBody ProjectCard projectCard) {
         projectCardService.add(projectCard);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id) {
         projectCardService.delete(id);
     }

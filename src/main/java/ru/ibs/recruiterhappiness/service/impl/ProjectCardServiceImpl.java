@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.ibs.recruiterhappiness.model.ProjectCard;
 import ru.ibs.recruiterhappiness.repository.ProjectCardRepository;
+import ru.ibs.recruiterhappiness.service.ProjectCardService;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class ProjectCardServiceImpl implements ru.ibs.recruiterhappiness.service.ProjectCardService {
+public class ProjectCardServiceImpl implements ProjectCardService {
     private final ProjectCardRepository projectCardRepository;
 
     @Override
