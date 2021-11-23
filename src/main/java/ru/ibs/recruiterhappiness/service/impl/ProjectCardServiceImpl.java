@@ -12,17 +12,20 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class ProjectCardService {
+public class ProjectCardServiceImpl implements ru.ibs.recruiterhappiness.service.ProjectCardService {
     private final ProjectCardRepository projectCardRepository;
 
+    @Override
     public List<ProjectCard> findAll() {
         return projectCardRepository.findAll();
     }
 
+    @Override
     public void add(ProjectCard projectCard) {
         projectCardRepository.save(projectCard);
     }
 
+    @Override
     public void delete(long id) {
         projectCardRepository.deleteById(id);
     }
