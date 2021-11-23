@@ -18,6 +18,7 @@ import javax.persistence.Id;
 public class ProjectCard {
     @Id
     @GeneratedValue
+    private Long cardId;
     private String customer;
     private String projectName;
 }
