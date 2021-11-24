@@ -2,6 +2,7 @@ package ru.ibs.dataprojects.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -18,7 +19,12 @@ import javax.persistence.Id;
 public class ProjectCard {
     @Id
     @GeneratedValue
-    private Long cardId;
+    private long cardId;
     private String customer;
     private String projectName;
+    private TypeProject typeProject;
+    private String functionalDirection;
+    private String subjectAreaOfTheProject;
+    private String projectDescription;
+    private String tasksOfTheProject;
 }
