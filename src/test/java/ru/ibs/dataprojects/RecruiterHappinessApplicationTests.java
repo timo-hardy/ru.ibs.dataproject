@@ -1,4 +1,4 @@
-package ru.ibs.recruiter;
+package ru.ibs.dataprojects;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

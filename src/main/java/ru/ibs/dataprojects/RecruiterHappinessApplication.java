@@ -1,4 +1,4 @@
-package ru.ibs.recruiter;
+package ru.ibs.dataprojects;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

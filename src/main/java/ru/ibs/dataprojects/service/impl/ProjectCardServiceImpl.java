@@ -1,10 +1,10 @@
-package ru.ibs.recruiter.service.impl;
+package ru.ibs.dataprojects.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ibs.recruiter.model.ProjectCard;
-import ru.ibs.recruiter.repository.ProjectCardRepository;
-import ru.ibs.recruiter.service.ProjectCardService;
+import ru.ibs.dataprojects.model.ProjectCard;
+import ru.ibs.dataprojects.repository.ProjectCardRepository;
+import ru.ibs.dataprojects.service.ProjectCardService;
 
 import java.util.List;
 

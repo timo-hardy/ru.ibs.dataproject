@@ -1,9 +1,9 @@
-package ru.ibs.recruiter.controller;
+package ru.ibs.dataprojects.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.ibs.recruiter.model.ProjectCard;
-import ru.ibs.recruiter.service.ProjectCardService;
+import ru.ibs.dataprojects.model.ProjectCard;
+import ru.ibs.dataprojects.service.ProjectCardService;
 
 import java.util.List;
 

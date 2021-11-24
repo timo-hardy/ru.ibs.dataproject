@@ -1,6 +1,6 @@
-package ru.ibs.recruiter.service;
+package ru.ibs.dataprojects.service;
 
-import ru.ibs.recruiter.model.ProjectCard;
+import ru.ibs.dataprojects.model.ProjectCard;
 
 import java.util.List;
 

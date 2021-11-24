@@ -1,4 +1,4 @@
-package ru.ibs.recruiter.config;
+package ru.ibs.dataprojects.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

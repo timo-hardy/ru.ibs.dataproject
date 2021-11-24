@@ -1,4 +1,4 @@
-package ru.ibs.recruiter.model;
+package ru.ibs.dataprojects.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
