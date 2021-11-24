@@ -1,8 +1,7 @@
-package ru.ibs.recruiterhappiness;
+package ru.ibs.recruiter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 public class RecruiterHappinessApplication {

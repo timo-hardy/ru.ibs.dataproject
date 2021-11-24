@@ -1,6 +1,6 @@
-package ru.ibs.recruiterhappiness.service;
+package ru.ibs.recruiter.service;
 
-import ru.ibs.recruiterhappiness.model.ProjectCard;
+import ru.ibs.recruiter.model.ProjectCard;
 
 import java.util.List;
 

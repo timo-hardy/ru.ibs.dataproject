@@ -1,4 +1,4 @@
-package ru.ibs.recruiterhappiness.model;
+package ru.ibs.recruiter.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

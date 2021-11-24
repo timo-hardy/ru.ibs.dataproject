@@ -1,9 +1,9 @@
-package ru.ibs.recruiterhappiness.controller;
+package ru.ibs.recruiter.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.ibs.recruiterhappiness.model.ProjectCard;
-import ru.ibs.recruiterhappiness.service.ProjectCardService;
+import ru.ibs.recruiter.model.ProjectCard;
+import ru.ibs.recruiter.service.ProjectCardService;
 
 import java.util.List;
 

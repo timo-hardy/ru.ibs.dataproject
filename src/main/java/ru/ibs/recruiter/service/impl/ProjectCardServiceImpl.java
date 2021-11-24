@@ -1,10 +1,10 @@
-package ru.ibs.recruiterhappiness.service.impl;
+package ru.ibs.recruiter.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ibs.recruiterhappiness.model.ProjectCard;
-import ru.ibs.recruiterhappiness.repository.ProjectCardRepository;
-import ru.ibs.recruiterhappiness.service.ProjectCardService;
+import ru.ibs.recruiter.model.ProjectCard;
+import ru.ibs.recruiter.repository.ProjectCardRepository;
+import ru.ibs.recruiter.service.ProjectCardService;
 
 import java.util.List;
 
