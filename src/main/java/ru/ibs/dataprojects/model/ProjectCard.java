@@ -28,7 +28,7 @@ public class ProjectCard {
     private long cardId;
     private String customerOfTheProject;
     private String projectName;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private TypeProject typeProject;
     private String functionalDirection;
     private String subjectAreaOfTheProject;
