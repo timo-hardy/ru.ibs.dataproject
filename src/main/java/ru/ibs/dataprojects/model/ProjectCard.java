@@ -38,4 +38,6 @@ public class ProjectCard {
     private String technologiesUsed;
     @OneToOne(cascade = CascadeType.ALL)
     private TypeOfDevelopment typeOfDevelopment;
+    private String teamDescription;
+
 }
