@@ -21,13 +21,14 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "CARDS")
 public class ProjectCard {
     @Id
     @GeneratedValue
     private long cardId;
     private String customerOfTheProject;
     private String projectName;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private TypeProject typeProject;
     private String functionalDirection;
     private String subjectAreaOfTheProject;
@@ -39,5 +40,12 @@ public class ProjectCard {
     @OneToOne(cascade = CascadeType.ALL)
     private TypeOfDevelopment typeOfDevelopment;
     private String teamDescription;
-
+    @OneToOne(cascade = CascadeType.ALL)
+    private Location location;
+    private LocalDate dateOfwithdrawalOfPeopleToTheProject;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Overtime overtime;
+    private String withdrawalProcedure;
+    @OneToOne(cascade = CascadeType.ALL)
+    private GOSTdocumentation gosTdocumentation;
 }
