@@ -36,4 +36,6 @@ public class ProjectCard {
     private ApplicationProjectStage applicationProjectStage;
     private LocalDate projectCompletionDate;
     private String technologiesUsed;
+    @OneToOne(cascade = CascadeType.ALL)
+    private TypeOfDevelopment typeOfDevelopment;
 }
