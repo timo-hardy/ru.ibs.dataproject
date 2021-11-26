@@ -1,5 +1,6 @@
 package ru.ibs.dataprojects.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ import javax.persistence.Id;
 public class Location {
     @Id
     @GeneratedValue
+    @JsonIgnore
     private long id;
     private boolean isRemoteLocation;
     private boolean isOfficeLocation;

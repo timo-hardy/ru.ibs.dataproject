@@ -1,5 +1,6 @@
 package ru.ibs.dataprojects.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ import javax.persistence.Id;
 public final class TypeProject {
     @Id
     @GeneratedValue
+    @JsonIgnore
     private long typeProjectId;
     private boolean isFixedAndPrice;
     private boolean isTimeAndMaterials;
