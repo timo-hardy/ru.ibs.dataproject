@@ -21,7 +21,7 @@ public class GOSTdocumentation {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private long id;
+    private Long id;
     private boolean isTheNeedToMaintainDocumentationInAccordanceWithGOST;
     private boolean isNotTheNeedToMaintainDocumentationInAccordanceWithGOST;
 }

@@ -10,13 +10,13 @@ public enum ApplicationProjectStage {
     PROJECT_STAGE_MONITORING("Мониторинг"),
     PROJECT_STAGE_END("Завершение");
 
-    private final String stage_project;
+    private final String stageProject;
 
-    ApplicationProjectStage(String stage_project) {
-        this.stage_project = stage_project;
+    ApplicationProjectStage(String stageProject) {
+        this.stageProject = stageProject;
     }
 
-    public String getStage_project() {
-        return stage_project;
+    public String getStageProject() {
+        return stageProject;
     }
 }

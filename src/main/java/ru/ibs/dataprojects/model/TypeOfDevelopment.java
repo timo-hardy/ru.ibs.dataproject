@@ -20,7 +20,7 @@ public final class TypeOfDevelopment {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private long typeOfDevelopmentId;
+    private Long typeOfDevelopmentId;
     private boolean isTypeOfProductDevelopment;
     private boolean isTypeOfDevelopmentDesing;
 }

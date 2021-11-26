@@ -20,7 +20,7 @@ public final class Overtime {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private long id;
+    private Long id;
     private boolean isOvertimeAvailability;
     private boolean isNotOvertimeAvailability;
 }

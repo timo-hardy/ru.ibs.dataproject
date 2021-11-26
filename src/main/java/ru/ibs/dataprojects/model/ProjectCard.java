@@ -25,7 +25,7 @@ import java.util.Date;
 public class ProjectCard {
     @Id
     @GeneratedValue
-    private long cardId;
+    private Long cardId;
     private String customerOfTheProject;
     private String projectName;
     @OneToOne(cascade = CascadeType.ALL)

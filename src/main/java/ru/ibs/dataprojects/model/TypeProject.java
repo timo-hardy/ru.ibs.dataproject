@@ -21,7 +21,7 @@ public final class TypeProject {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private long typeProjectId;
+    private Long typeProjectId;
     private boolean isFixedAndPrice;
     private boolean isTimeAndMaterials;
     private boolean isSoftware;

@@ -20,7 +20,7 @@ public class Location {
     @Id
     @GeneratedValue
     @JsonIgnore
-    private long id;
+    private Long id;
     private boolean isRemoteLocation;
     private boolean isOfficeLocation;
     private String addressLocation;
