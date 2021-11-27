@@ -21,7 +21,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CARDS")
 public class ProjectCard {
     @Id
     @GeneratedValue
@@ -48,4 +47,6 @@ public class ProjectCard {
     private String withdrawalProcedure;
     @OneToOne(cascade = CascadeType.ALL)
     private GOSTdocumentation gosTdocumentation;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private UserProject userProject;
 }

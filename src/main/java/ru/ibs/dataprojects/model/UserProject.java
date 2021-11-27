@@ -3,10 +3,10 @@ package ru.ibs.dataprojects.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Timur Khidirov on 26.11.2021
@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+public class UserProject {
     @Id
     @GeneratedValue
     private Long userId;
@@ -25,4 +25,10 @@ public class User {
     private String email;
     private String role;
     private String phoneNumber;
+    @OneToMany(
+            mappedBy = "userProject",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    private List<ProjectCard> projectCards;
 }
