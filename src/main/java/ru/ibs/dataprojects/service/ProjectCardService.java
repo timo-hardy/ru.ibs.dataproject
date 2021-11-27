@@ -29,4 +29,5 @@ public interface ProjectCardService {
     List<ProjectCard> sortByDateOfCardCreationAsc();
 
     List<ProjectCard> sortByDateOfCardCreationDesc();
+
 }

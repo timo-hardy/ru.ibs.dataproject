@@ -11,6 +11,9 @@ import java.util.List;
  */
 @Repository
 public interface ProjectCardRepository extends JpaRepository<ProjectCard, Long> {
+
+    List<ProjectCard> findAllByCustomerOfTheProjectContainsIgnoreCase();
+
     List<ProjectCard> findByOrderByProjectNameAsc();
 
     List<ProjectCard> findByOrderByProjectNameDesc();
@@ -26,4 +29,6 @@ public interface ProjectCardRepository extends JpaRepository<ProjectCard, Long> 
     List<ProjectCard> findByOrderByDateOfCardCreationAsc();
 
     List<ProjectCard> findByOrderByDateOfCardCreationDesc();
+
+
 }

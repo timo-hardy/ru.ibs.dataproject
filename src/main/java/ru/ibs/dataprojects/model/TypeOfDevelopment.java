@@ -22,5 +22,5 @@ public final class TypeOfDevelopment {
     @JsonIgnore
     private Long typeOfDevelopmentId;
     private boolean isTypeOfProductDevelopment;
-    private boolean isTypeOfDevelopmentDesing;
+    private boolean isTypeOfDevelopmentDesign;
 }

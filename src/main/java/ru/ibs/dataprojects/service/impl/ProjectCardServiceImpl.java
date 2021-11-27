@@ -70,6 +70,4 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     public List<ProjectCard> sortByDateOfCardCreationDesc() {
         return projectCardRepository.findByOrderByDateOfCardCreationDesc();
     }
-
-
 }
