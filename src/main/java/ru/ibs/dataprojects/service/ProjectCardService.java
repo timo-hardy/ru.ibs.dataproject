@@ -13,4 +13,6 @@ public interface ProjectCardService {
     void add(ProjectCard projectCard);
 
     void delete(long id);
+
+    List<ProjectCard> sortByIdAsc();
 }

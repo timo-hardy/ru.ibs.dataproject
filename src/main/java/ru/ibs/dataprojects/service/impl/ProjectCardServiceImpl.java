@@ -30,4 +30,11 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     public void delete(long id) {
         projectCardRepository.deleteById(id);
     }
+
+    @Override
+    public List<ProjectCard> sortByIdAsc() {
+        return projectCardRepository.findByOrderByCardIdAsc();
+    }
+
+
 }

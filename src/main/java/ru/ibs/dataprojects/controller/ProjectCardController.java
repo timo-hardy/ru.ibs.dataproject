@@ -30,4 +30,9 @@ public class ProjectCardController {
     public void delete(@PathVariable Long id) {
         projectCardService.delete(id);
     }
+
+    @GetMapping("/sortByIdAsc")
+    public  List<ProjectCard> getSortByIdAsc(){
+        return projectCardService.sortByIdAsc();
+    }
 }

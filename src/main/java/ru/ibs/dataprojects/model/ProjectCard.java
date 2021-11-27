@@ -25,6 +25,7 @@ public class ProjectCard {
     @Id
     @GeneratedValue
     private Long cardId;
+    private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
     @OneToOne(cascade = CascadeType.ALL)
