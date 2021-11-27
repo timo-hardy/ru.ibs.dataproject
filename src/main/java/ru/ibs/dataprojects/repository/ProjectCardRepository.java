@@ -12,11 +12,18 @@ import java.util.List;
 @Repository
 public interface ProjectCardRepository extends JpaRepository<ProjectCard, Long> {
     List<ProjectCard> findByOrderByProjectNameAsc();
+
     List<ProjectCard> findByOrderByProjectNameDesc();
+
     List<ProjectCard> findByOrderBySubjectAreaOfTheProjectAsc();
+
     List<ProjectCard> findByOrderBySubjectAreaOfTheProjectDesc();
+
     List<ProjectCard> findByOrderByCustomerOfTheProjectAsc();
+
     List<ProjectCard> findByOrderByCustomerOfTheProjectDesc();
+
     List<ProjectCard> findByOrderByDateOfCardCreationAsc();
+
     List<ProjectCard> findByOrderByDateOfCardCreationDesc();
 }

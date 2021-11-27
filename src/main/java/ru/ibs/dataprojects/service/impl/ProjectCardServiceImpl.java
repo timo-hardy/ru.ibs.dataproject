@@ -38,7 +38,7 @@ public class ProjectCardServiceImpl implements ProjectCardService {
 
     @Override
     public List<ProjectCard> sortByProjectNameDesc() {
-        return sortByCustomerOfTheProjectDesc();
+        return projectCardRepository.findByOrderByProjectNameDesc();
     }
 
     @Override

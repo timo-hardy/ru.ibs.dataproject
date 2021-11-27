@@ -31,8 +31,43 @@ public class ProjectCardController {
         projectCardService.delete(id);
     }
 
-    @GetMapping("/sortByIdAsc")
-    public  List<ProjectCard> getSortByIdAsc(){
-        return projectCardService.sortByIdAsc();
+    @GetMapping("/ortByOrderByProjectNameAsc")
+    public  List<ProjectCard> sortByOrderByProjectNameAsc(){
+        return projectCardService.sortByProjectNameAsc();
+    }
+
+    @GetMapping("/sortByOrderByProjectNameDesc")
+    public  List<ProjectCard> sortByOrderByProjectNameDesc(){
+        return projectCardService.sortByProjectNameDesc();
+    }
+
+    @GetMapping("/sortBySubjectAreaOfTheProjectAsc")
+    public  List<ProjectCard> sortBySubjectAreaOfTheProjectAsc(){
+        return projectCardService.sortBySubjectAreaOfTheProjectAsc();
+    }
+
+    @GetMapping("/sortBySubjectAreaOfTheProjectDesc")
+    public  List<ProjectCard> sortBySubjectAreaOfTheProjectDesc(){
+        return projectCardService.sortBySubjectAreaOfTheProjectDesc();
+    }
+
+    @GetMapping("/sortByCustomerOfTheProjectAsc")
+    public  List<ProjectCard> sortByCustomerOfTheProjectAsc(){
+        return projectCardService.sortByCustomerOfTheProjectAsc();
+    }
+
+    @GetMapping("/sortByCustomerOfTheProjectDesc")
+    public  List<ProjectCard> sortByCustomerOfTheProjectDesc(){
+        return projectCardService.sortByCustomerOfTheProjectDesc();
+    }
+
+    @GetMapping("/sortByDateOfCardCreationAsc")
+    public  List<ProjectCard> sortByDateOfCardCreationAsc(){
+        return projectCardService.sortByDateOfCardCreationAsc();
+    }
+
+    @GetMapping("/sortByDateOfCardCreationDesc")
+    public  List<ProjectCard> sortByDateOfCardCreationDesc(){
+        return projectCardService.sortByDateOfCardCreationDesc();
     }
 }
