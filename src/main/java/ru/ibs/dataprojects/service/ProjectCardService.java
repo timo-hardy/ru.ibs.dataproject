@@ -14,5 +14,19 @@ public interface ProjectCardService {
 
     void delete(long id);
 
-    List<ProjectCard> sortByIdAsc();
+    List<ProjectCard> sortByProjectNameAsc();
+
+    List<ProjectCard> sortByProjectNameDesc();
+
+    List<ProjectCard> sortBySubjectAreaOfTheProjectAsc();
+
+    List<ProjectCard> sortBySubjectAreaOfTheProjectDesc();
+
+    List<ProjectCard> sortByCustomerOfTheProjectAsc();
+
+    List<ProjectCard> sortByCustomerOfTheProjectDesc();
+
+    List<ProjectCard> sortByDateOfCardCreationAsc();
+
+    List<ProjectCard> sortByDateOfCardCreationDesc();
 }

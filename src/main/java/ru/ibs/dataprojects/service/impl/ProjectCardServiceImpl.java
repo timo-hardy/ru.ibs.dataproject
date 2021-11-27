@@ -32,8 +32,43 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     }
 
     @Override
-    public List<ProjectCard> sortByIdAsc() {
-        return projectCardRepository.findByOrderByCardIdAsc();
+    public List<ProjectCard> sortByProjectNameAsc() {
+        return projectCardRepository.findByOrderByProjectNameAsc();
+    }
+
+    @Override
+    public List<ProjectCard> sortByProjectNameDesc() {
+        return sortByCustomerOfTheProjectDesc();
+    }
+
+    @Override
+    public List<ProjectCard> sortBySubjectAreaOfTheProjectAsc() {
+        return projectCardRepository.findByOrderBySubjectAreaOfTheProjectAsc();
+    }
+
+    @Override
+    public List<ProjectCard> sortBySubjectAreaOfTheProjectDesc() {
+        return projectCardRepository.findByOrderBySubjectAreaOfTheProjectDesc();
+    }
+
+    @Override
+    public List<ProjectCard> sortByCustomerOfTheProjectAsc() {
+        return projectCardRepository.findByOrderByCustomerOfTheProjectAsc();
+    }
+
+    @Override
+    public List<ProjectCard> sortByCustomerOfTheProjectDesc() {
+        return projectCardRepository.findByOrderByCustomerOfTheProjectDesc();
+    }
+
+    @Override
+    public List<ProjectCard> sortByDateOfCardCreationAsc() {
+        return projectCardRepository.findByOrderByDateOfCardCreationAsc();
+    }
+
+    @Override
+    public List<ProjectCard> sortByDateOfCardCreationDesc() {
+        return projectCardRepository.findByOrderByDateOfCardCreationDesc();
     }
 
 
