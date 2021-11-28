@@ -73,14 +73,4 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     public List<ProjectCard> sortByDateOfCardCreationDesc() {
         return projectCardRepository.findByOrderByDateOfCardCreationDesc();
     }
-
-    @Override
-    public List<ProjectCard> filterByCustomerName(String name) {
-        return projectCardRepository.findAllByCustomerOfTheProjectContainsIgnoreCase(name);
-    }
-
-    @Override
-    public List<ProjectCard> findAllByUserProject(UserProject userProject) {
-        return projectCardRepository.findAllByUserProject(userProject);
-    }
 }

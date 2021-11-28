@@ -31,8 +31,4 @@ public interface ProjectCardService {
     List<ProjectCard> sortByDateOfCardCreationAsc();
 
     List<ProjectCard> sortByDateOfCardCreationDesc();
-
-    List<ProjectCard> filterByCustomerName(String name);
-
-    List<ProjectCard> findAllByUserProject(UserProject userProject);
 }

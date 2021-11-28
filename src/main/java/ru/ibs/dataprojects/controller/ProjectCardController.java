@@ -71,14 +71,4 @@ public class ProjectCardController {
     public List<ProjectCard> sortByDateOfCardCreationDesc() {
         return projectCardService.sortByDateOfCardCreationDesc();
     }
-
-    @GetMapping(path = "/filterByCustomerName", params = "name")
-    public List<ProjectCard> filterByCustomerName(@RequestParam String name) {
-        return projectCardService.filterByCustomerName(name);
-    }
-
-    @GetMapping(path = "/filterByUserProject", params = "userProject")
-    public List<ProjectCard> findAllByUserProject(@RequestParam UserProject userProject) {
-        return projectCardService.findAllByUserProject(userProject);
-    }
 }
