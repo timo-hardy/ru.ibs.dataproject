@@ -12,6 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -25,7 +26,8 @@ public class ProjectCard {
     @Id
     @GeneratedValue
     private Long cardId;
-    private LocalDate dateOfCardCreation;
+
+    private LocalDateTime dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
 
@@ -39,6 +41,7 @@ public class ProjectCard {
     private LocalDate projectCompletionDate;
     private String technologiesUsed;
     private String deveolpmentMethodology;
+
     @OneToOne(cascade = CascadeType.ALL)
     private TypeOfDevelopment typeOfDevelopment;
     private String teamDescription;
@@ -46,13 +49,10 @@ public class ProjectCard {
     @OneToOne(cascade = CascadeType.ALL)
     private Location location;
     private String shedule;
+    private boolean isOvertimeAvailability;
     private LocalDate dateOfwithdrawalOfPeopleToTheProject;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Overtime overtime;
     private String withdrawalProcedure;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private GOSTdocumentation gosTdocumentation;
+    private boolean isTheNeedToMaintainDocumentationInAccordanceWithGOST;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
