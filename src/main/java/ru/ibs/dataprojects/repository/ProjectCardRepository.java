@@ -1,8 +1,10 @@
 package ru.ibs.dataprojects.repository;
 
+import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.ibs.dataprojects.model.ProjectCard;
+import ru.ibs.dataprojects.model.UserProject;
 
 import java.util.List;
 
@@ -12,7 +14,11 @@ import java.util.List;
 @Repository
 public interface ProjectCardRepository extends JpaRepository<ProjectCard, Long> {
 
-    List<ProjectCard> findAllByCustomerOfTheProjectContainsIgnoreCase();
+    List<ProjectCard> findAllByCustomerOfTheProjectContainsIgnoreCase(String name);
+
+    List<ProjectCard> findAllByUserProject(UserProject userProject);
+
+//    List<ProjectCard> findAllByUserProject(UserProject userProject);
 
     List<ProjectCard> findByOrderByProjectNameAsc();
 
@@ -29,6 +35,4 @@ public interface ProjectCardRepository extends JpaRepository<ProjectCard, Long> 
     List<ProjectCard> findByOrderByDateOfCardCreationAsc();
 
     List<ProjectCard> findByOrderByDateOfCardCreationDesc();
-
-
 }

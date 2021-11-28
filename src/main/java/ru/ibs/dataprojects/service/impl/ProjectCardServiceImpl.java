@@ -1,8 +1,11 @@
 package ru.ibs.dataprojects.service.impl;
 
+import io.swagger.models.auth.In;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import ru.ibs.dataprojects.model.ProjectCard;
+import ru.ibs.dataprojects.model.UserProject;
 import ru.ibs.dataprojects.repository.ProjectCardRepository;
 import ru.ibs.dataprojects.service.ProjectCardService;
 
@@ -69,5 +72,15 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     @Override
     public List<ProjectCard> sortByDateOfCardCreationDesc() {
         return projectCardRepository.findByOrderByDateOfCardCreationDesc();
+    }
+
+    @Override
+    public List<ProjectCard> filterByCustomerName(String name) {
+        return projectCardRepository.findAllByCustomerOfTheProjectContainsIgnoreCase(name);
+    }
+
+    @Override
+    public List<ProjectCard> findAllByUserProject(UserProject userProject) {
+        return projectCardRepository.findAllByUserProject(userProject);
     }
 }

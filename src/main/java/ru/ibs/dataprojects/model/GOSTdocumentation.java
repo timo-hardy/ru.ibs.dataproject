@@ -23,5 +23,4 @@ public class GOSTdocumentation {
     @JsonIgnore
     private Long id;
     private boolean isTheNeedToMaintainDocumentationInAccordanceWithGOST;
-    private boolean isNotTheNeedToMaintainDocumentationInAccordanceWithGOST;
 }

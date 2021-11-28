@@ -28,26 +28,33 @@ public class ProjectCard {
     private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
+
     @OneToOne(cascade = CascadeType.ALL)
     private TypeProject typeProject;
     private String functionalDirection;
     private String subjectAreaOfTheProject;
     private String projectDescription;
     private String tasksOfTheProject;
-    private ApplicationProjectStage applicationProjectStage;
+    private String stageProject;
     private LocalDate projectCompletionDate;
     private String technologiesUsed;
+    private String deveolpmentMethodology;
     @OneToOne(cascade = CascadeType.ALL)
     private TypeOfDevelopment typeOfDevelopment;
     private String teamDescription;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Location location;
+    private String shedule;
     private LocalDate dateOfwithdrawalOfPeopleToTheProject;
     @OneToOne(cascade = CascadeType.ALL)
     private Overtime overtime;
     private String withdrawalProcedure;
+
     @OneToOne(cascade = CascadeType.ALL)
     private GOSTdocumentation gosTdocumentation;
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
     private UserProject userProject;
 }

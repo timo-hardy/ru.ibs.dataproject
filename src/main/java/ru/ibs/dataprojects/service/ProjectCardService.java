@@ -1,6 +1,8 @@
 package ru.ibs.dataprojects.service;
 
+import org.apache.catalina.User;
 import ru.ibs.dataprojects.model.ProjectCard;
+import ru.ibs.dataprojects.model.UserProject;
 
 import java.util.List;
 
@@ -30,4 +32,7 @@ public interface ProjectCardService {
 
     List<ProjectCard> sortByDateOfCardCreationDesc();
 
+    List<ProjectCard> filterByCustomerName(String name);
+
+    List<ProjectCard> findAllByUserProject(UserProject userProject);
 }

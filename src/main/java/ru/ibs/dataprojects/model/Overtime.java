@@ -22,5 +22,4 @@ public final class Overtime {
     @JsonIgnore
     private Long id;
     private boolean isOvertimeAvailability;
-    private boolean isNotOvertimeAvailability;
 }

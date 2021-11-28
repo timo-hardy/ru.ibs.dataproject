@@ -23,7 +23,7 @@ public class SwaggerConfig {
         public Docket api() {
             return new Docket(DocumentationType.SWAGGER_2)
                     .select()
-                    .apis(RequestHandlerSelectors.basePackage("ru.ibs.recruiterhappiness.controller"))
+                    .apis(RequestHandlerSelectors.basePackage("ru.ibs.dataprojects.controller"))
                     .paths(PathSelectors.any())
                     .build();
         }

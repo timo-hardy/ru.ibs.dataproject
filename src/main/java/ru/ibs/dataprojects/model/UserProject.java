@@ -25,10 +25,10 @@ public class UserProject {
     private String email;
     private String role;
     private String phoneNumber;
-    @OneToMany(
-            mappedBy = "userProject",
-            orphanRemoval = true,
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
-    private List<ProjectCard> projectCards;
+//    @OneToMany(
+//            mappedBy = "userProject",
+//            orphanRemoval = true,
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY)
+//    private List<ProjectCard> projectCards;
 }
