@@ -27,8 +27,8 @@ public class UserProject {
     private String phoneNumber;
 //    @OneToMany(
 //            mappedBy = "userProject",
-//            orphanRemoval = true,
+////            orphanRemoval = true,
 //            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY)
+//            fetch = FetchType.EAGER)
 //    private List<ProjectCard> projectCards;
 }

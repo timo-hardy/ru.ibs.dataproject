@@ -32,7 +32,7 @@ public class ProjectCardController {
         projectCardService.delete(id);
     }
 
-    @GetMapping("/ortByOrderByProjectNameAsc")
+    @GetMapping("/sortByOrderByProjectNameAsc")
     public List<ProjectCard> sortByOrderByProjectNameAsc() {
         return projectCardService.sortByProjectNameAsc();
     }

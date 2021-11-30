@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
  */
 @Configuration
 public class DataAppConfig {
+    //Конфигурация, которая даёт возможность форматировать формат даты и времени
     private static final String dateFormat = "dd-MM-yyyy";
     private static final String dateTimeFormat = "dd-MM-yyyy HH:mm:ss";
 
