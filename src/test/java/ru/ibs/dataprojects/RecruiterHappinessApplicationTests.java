@@ -9,5 +9,4 @@ class RecruiterHappinessApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

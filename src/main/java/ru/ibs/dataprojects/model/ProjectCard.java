@@ -54,7 +54,7 @@ public class ProjectCard {
     private String withdrawalProcedure;
     private boolean isTheNeedToMaintainDocumentationInAccordanceWithGOST;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private UserProject userProject;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "user_id")
+//    private UserProject userProject;
 }
