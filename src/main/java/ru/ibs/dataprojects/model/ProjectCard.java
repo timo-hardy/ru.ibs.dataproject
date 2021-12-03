@@ -24,7 +24,7 @@ import java.util.Date;
 @Entity
 public class ProjectCard {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
 
     private LocalDateTime dateOfCardCreation;

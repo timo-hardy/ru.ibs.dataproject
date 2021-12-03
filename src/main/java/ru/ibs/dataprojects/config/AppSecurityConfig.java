@@ -11,7 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import ru.ibs.dataprojects.auth.ApplicationUserService;
 import ru.ibs.dataprojects.service.impl.UserServiceImpl;
+
+import static ru.ibs.dataprojects.config.ApplicationUserRole.MANAGER;
 
 /**
  * @author Timur Khidirov on 02.12.2021
@@ -21,8 +24,8 @@ import ru.ibs.dataprojects.service.impl.UserServiceImpl;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
-    private final UserServiceImpl userService;
     private final PasswordEncoder passwordEncoder;
+    private final ApplicationUserService applicationUserService;
 
 
     @Override
@@ -31,18 +34,35 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/registration").permitAll()
-                .antMatchers("/api/**").hasRole("ADMIN")
+                .antMatchers("/").permitAll()
+                .antMatchers("/api/**").hasRole(MANAGER.name())
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin();
     }
 
-    @Autowired
-    protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService);
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(daoAuthenticationProvider());
     }
+
+    @Bean
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+        provider.setPasswordEncoder(passwordEncoder);
+        provider.setUserDetailsService(applicationUserService);
+        return provider;
+    }
+
+
+//    @Autowired
+//    protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(userService);
+//    }
+//
+
 
 //    @Bean
 //    public DaoAuthenticationProvider daoAuthenticationProvider() {

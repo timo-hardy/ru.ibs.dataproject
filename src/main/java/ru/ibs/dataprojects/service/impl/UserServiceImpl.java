@@ -1,20 +1,10 @@
 package ru.ibs.dataprojects.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ru.ibs.dataprojects.model.Role;
 import ru.ibs.dataprojects.model.User;
-import ru.ibs.dataprojects.repository.RoleRepository;
 import ru.ibs.dataprojects.repository.UserRepository;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -22,35 +12,46 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserDetailsService {
+public class UserServiceImpl {
     //    private final ApplicationUserDao applicationUserDao;
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
-    private final PasswordEncoder passwordEncoder;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        return user;
+    public void create(String username, String password) {
+        final User user = new User(username, password);
+        userRepository.save(user);
     }
 
-//    public void create(User user) {
-//        userRepository.save(user);
-//    }
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    public User findById(long id) {
+        return userRepository.findById(id);
+    }
+
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
+
+
+//    private final RoleRepository roleRepository;
+//    private final PasswordEncoder passwordEncoder;
+
+//    @Override
+//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//        User user = userRepository.findByUsername(username);
 //
-//    public void delete(long id) {
-//        userRepository.deleteById(id);
+//        if (user == null) {
+//            throw new UsernameNotFoundException("User not found");
+//        }
+//        return user;
 //    }
 
 
-    private void getApplicationUsers() {
-        if (roleRepository.findByName("ADMIN") == null) {
-            roleRepository.save(new Role(1L, "ADMIN"));
-        }
+//    private void getApplicationUsers() {
+//        if (roleRepository.findByName("ADMIN") == null) {
+//            roleRepository.save(new Role(1L, "ADMIN"));
+//        }
 //        if (roleRepository.findByName("RECRUITER") == null) {
 //            roleRepository.save(new Role(2L, "RECRUITER"));
 //        }
@@ -58,14 +59,14 @@ public class UserServiceImpl implements UserDetailsService {
 //            roleRepository.save(new Role(3L, "USER"));
 //        }
 
-        if (userRepository.findByUsername("oliver") == null) {
-            userRepository.save(new User(
-                    null,
-                    "oliver",
-                    passwordEncoder.encode("password"),
-                    Collections.singleton(new Role(1L, "ADMIN"))
-            ));
-        }
+//        if (userRepository.findByUsername("oliver") == null) {
+//            userRepository.save(new User(
+//                    null,
+//                    "oliver",
+//                    passwordEncoder.encode("password"),
+//                    Collections.singleton(new Role(1L, "ADMIN"))
+//            ));
+//        }
 //    }
 
 
@@ -89,16 +90,5 @@ public class UserServiceImpl implements UserDetailsService {
 //    }
 
 
-//    public List<User> findAll() {
-//        return userRepository.findAll();
 //    }
-
-
-//    public void add(ApplicationUser applicationUser) {
-//        userRepository.save(applicationUser);
-//    }
-//    public void delete(Long id) {
-//        userRepository.deleteById(id);
-//    }
-    }
 }
