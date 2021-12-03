@@ -1,8 +1,6 @@
 package ru.ibs.dataprojects.service;
 
-import org.apache.catalina.User;
 import ru.ibs.dataprojects.model.ProjectCard;
-import ru.ibs.dataprojects.model.UserProject;
 
 import java.util.List;
 

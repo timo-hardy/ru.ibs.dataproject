@@ -1,11 +1,8 @@
 package ru.ibs.dataprojects.service.impl;
 
-import io.swagger.models.auth.In;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import ru.ibs.dataprojects.model.ProjectCard;
-import ru.ibs.dataprojects.model.UserProject;
 import ru.ibs.dataprojects.repository.ProjectCardRepository;
 import ru.ibs.dataprojects.service.ProjectCardService;
 

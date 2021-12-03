@@ -1,10 +1,8 @@
 package ru.ibs.dataprojects.repository;
 
-import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.ibs.dataprojects.model.ProjectCard;
-import ru.ibs.dataprojects.model.UserProject;
 
 import java.util.List;
 
