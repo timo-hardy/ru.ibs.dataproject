@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApplicationUserService implements UserDetailsService {
 
-    @Qualifier("fake")
     private final ApplicationUserDao applicationUserDao;
 
     @Override

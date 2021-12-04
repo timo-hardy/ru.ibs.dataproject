@@ -16,7 +16,6 @@ import java.util.List;
 @RequestMapping("/api/card")
 public class ProjectCardController {
     private final ProjectCardService projectCardService;
-
     @PreAuthorize("hasAnyRole('MANAGER', 'USER')")
     @GetMapping("/read")
     public List<ProjectCard> getAll() {
