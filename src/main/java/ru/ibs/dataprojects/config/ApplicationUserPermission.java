@@ -4,10 +4,8 @@ package ru.ibs.dataprojects.config;
  * @author Timur Khidirov on 02.12.2021
  */
 public enum ApplicationUserPermission {
-    EMPLOYEE_READ("employee:read"),
-    EMPLOYEE_WRITE("employee:write"),
-    TASK_READ("task:read"),
-    TASK_WRITE("task:write");
+    PROJECT_CARD_READ("project_card:read"),
+    PROJECT_CARD_WRITE("project_card:write");
 
     private final String permission;
 

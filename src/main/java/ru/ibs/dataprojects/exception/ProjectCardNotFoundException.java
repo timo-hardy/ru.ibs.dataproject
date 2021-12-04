@@ -3,7 +3,8 @@ package ru.ibs.dataprojects.exception;
 /**
  * @author Timur Khidirov on 30.11.2021
  */
-public class ProjectCardNotFoundException extends RuntimeException{
+public class ProjectCardNotFoundException extends RuntimeException {
+
     public ProjectCardNotFoundException() {
     }
 

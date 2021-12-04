@@ -16,8 +16,8 @@ public class UserServiceImpl {
     //    private final ApplicationUserDao applicationUserDao;
     private final UserRepository userRepository;
 
-    public void create(String username, String password) {
-        final User user = new User(username, password);
+    public void create(String username, String password, String role) {
+        final User user = new User(username, password, role);
         userRepository.save(user);
     }
 

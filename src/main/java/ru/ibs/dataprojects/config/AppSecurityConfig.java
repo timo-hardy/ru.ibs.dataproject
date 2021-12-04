@@ -1,20 +1,21 @@
 package ru.ibs.dataprojects.config;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.ibs.dataprojects.auth.ApplicationUserService;
-import ru.ibs.dataprojects.service.impl.UserServiceImpl;
 
+import static ru.ibs.dataprojects.config.ApplicationUserPermission.PROJECT_CARD_READ;
+import static ru.ibs.dataprojects.config.ApplicationUserPermission.PROJECT_CARD_WRITE;
 import static ru.ibs.dataprojects.config.ApplicationUserRole.MANAGER;
+import static ru.ibs.dataprojects.config.ApplicationUserRole.USER;
 
 /**
  * @author Timur Khidirov on 02.12.2021
@@ -36,6 +37,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/api/**").hasRole(MANAGER.name())
+                .antMatchers(HttpMethod.GET, "/api/card/**").hasAuthority(PROJECT_CARD_READ.getPermission())
+                .antMatchers("/api/card/**" ).hasRole(USER.name())
                 .anyRequest()
                 .authenticated()
                 .and()

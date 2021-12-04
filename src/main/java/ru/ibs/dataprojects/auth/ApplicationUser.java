@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Set;
+
 /**
  * @author Timur Khidirov on 02.12.2021
  */
