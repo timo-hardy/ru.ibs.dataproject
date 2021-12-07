@@ -8,6 +8,8 @@ import java.util.List;
  * @author Timur Khidirov on 23.11.2021
  */
 public interface ProjectCardService {
+    List<ProjectCard> findByCardId(long id);
+
     List<ProjectCard> findAll();
 
     void add(ProjectCard projectCard);

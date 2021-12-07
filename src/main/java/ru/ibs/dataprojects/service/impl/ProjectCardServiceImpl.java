@@ -17,6 +17,11 @@ public class ProjectCardServiceImpl implements ProjectCardService {
     private final ProjectCardRepository projectCardRepository;
 
     @Override
+    public List<ProjectCard> findByCardId(long id) {
+        return projectCardRepository.findByCardId(id);
+    }
+
+    @Override
     public List<ProjectCard> findAll() {
         return projectCardRepository.findAll();
     }
