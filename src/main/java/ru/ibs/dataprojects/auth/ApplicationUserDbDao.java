@@ -23,15 +23,14 @@ import static ru.ibs.dataprojects.config.ApplicationUserRole.USER;
 @RequiredArgsConstructor
 @Service("fake")
 public class ApplicationUserDbDao implements ApplicationUserDao {
-
     private final UserServiceImpl userService;
     private final PasswordEncoder passwordEncoder;
 
     @PostConstruct
     private void postConstruct() {
 
-        userService.create("timo", "123", "MANAGER");
-        userService.create("vasya", "1234", "USER");
+        userService.create("manager", "123", "MANAGER");
+        userService.create("user", "1234", "USER");
 //        userService.createUser("henry", "password123", "MANAGER");
 //        userService.createUser("emma", "password123", "TRAINEE");
 //        userService.createUser("Boris", "password", "SCRUM_MASTER");

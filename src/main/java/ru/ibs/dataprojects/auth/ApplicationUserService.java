@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class ApplicationUserService implements UserDetailsService {
-
     private final ApplicationUserDao applicationUserDao;
 
     @Override
