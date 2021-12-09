@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.ibs.dataprojects.model.User;
 import ru.ibs.dataprojects.repository.UserRepository;
+import ru.ibs.dataprojects.service.UserService;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements ru.ibs.dataprojects.service.UserService {
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override

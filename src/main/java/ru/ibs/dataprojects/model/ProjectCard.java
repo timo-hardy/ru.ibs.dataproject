@@ -50,6 +50,7 @@ public class ProjectCard {
     private LocalDate dateOfwithdrawalOfPeopleToTheProject;
     private String withdrawalProcedure;
     private boolean isTheNeedToMaintainDocumentationInAccordanceWithGOST;
+
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name = "user_id")
 //    private UserProject userProject;
