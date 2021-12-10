@@ -38,9 +38,9 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .cors()
-                .and()
-                .addFilterBefore(new CorsFilter(corsConfigurationSource()), SessionManagementFilter.class)
-                .formLogin()
+//                .and()
+//                .addFilterBefore(new CorsFilter(corsConfigurationSource()), SessionManagementFilter.class)
+//                .formLogin()
                 .disable()
                 .csrf()
                 .disable()
@@ -75,8 +75,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     CorsConfigurationSource corsConfigurationSource() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+//        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+//        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedOriginPatterns(Collections.singletonList("*"));
         configuration.addAllowedHeader("*");
