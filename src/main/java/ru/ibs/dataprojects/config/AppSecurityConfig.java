@@ -40,7 +40,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .and()
                 .addFilterBefore(new CorsFilter(corsConfigurationSource()), SessionManagementFilter.class)
-                .httpBasic()
+                .formLogin()
                 .disable()
                 .csrf()
                 .disable()
@@ -53,9 +53,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic();
-//                .formLogin();
-
+                .formLogin();
     }
 
 
