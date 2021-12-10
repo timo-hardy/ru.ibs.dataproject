@@ -17,6 +17,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import ru.ibs.dataprojects.auth.ApplicationUserService;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static ru.ibs.dataprojects.config.ApplicationUserRole.MANAGER;
 import static ru.ibs.dataprojects.config.ApplicationUserRole.USER;
@@ -34,7 +35,8 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .cors().and()
+                .cors()
+                .disable()
                 .csrf()
                 .disable()
                 .authorizeRequests()
@@ -47,6 +49,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated()
                 .and()
                 .formLogin();
+
     }
 
 
@@ -65,10 +68,14 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+//        configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedOriginPatterns(Collections.singletonList("*"));
+        configuration.addAllowedHeader("*");
+        configuration.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
