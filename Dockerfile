@@ -13,7 +13,7 @@ ENV JAVA_PARAM=$JAVA_PARAM
 WORKDIR /opt/app
 COPY --from=builder /usr/myapp/build/libs/*.jar /opt/app/
 
-RUN chmod 777 /opt/app/app.jar
+RUN chmod 777 /opt/app/*.jar
 RUN chown nobody -R /opt/app
 USER 65534
 ENV PATH=$PATH:/opt/app
