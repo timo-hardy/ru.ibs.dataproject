@@ -31,6 +31,7 @@ docker image push:
     before_script:
         - echo "DOCKER_REPOSITORY':'           ${DOCKER_REPOSITORY};"
         - echo "CURRENT_PROJECT_NAME':'        ${CURRENT_PROJECT_NAME};"
+        - export VERSION=$(grep 'version =' ./build.gradle | cut -d "'" -f 2 | cut -d "-" -f 1)
         - echo "VERSION':'                     ${VERSION}."
     script:
         - docker login ${DOCKER_REPOSITORY} -u ${NEXUS_LOGIN} -p ${NEXUS_PASSWORD}
@@ -42,7 +43,7 @@ helm chart build:
     stage: helm chart build
     dependencies: [docker image build]
     before_script:
-        - export VERSION=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec | sed 's/-/\t/g' | cut -f 1)
+        - export VERSION=$(grep 'version =' ./build.gradle | cut -d "'" -f 2 | cut -d "-" -f 1)
         - export PORT=$(grep EXPOSE Dockerfile | cut -d' ' -f2)
         - echo "-------------"
         - echo "CURRENT_PROJECT_NAME':'        ${CURRENT_PROJECT_NAME};"
@@ -74,6 +75,7 @@ helm chart push:
     dependencies: [helm chart build]
     before_script:
         - echo "CURRENT_PROJECT_NAME':'        ${CURRENT_PROJECT_NAME};"
+        - export VERSION=$(grep 'version =' ./build.gradle | cut -d "'" -f 2 | cut -d "-" -f 1)
         - echo "VERSION':'                     ${VERSION};"
         - echo "HELM_REPOSITORY':'             ${HELM_REPOSITORY}."
     script:
@@ -86,6 +88,7 @@ openshift deploy:
         - echo "CURRENT_PROJECT_GROUP':'       ${CURRENT_PROJECT_GROUP};"
         - echo "HELM_REPOSITORY':'             ${HELM_REPOSITORY};"
         - echo "CURRENT_PROJECT_NAME':'        ${CURRENT_PROJECT_NAME};"
+        - export VERSION=$(grep 'version =' ./build.gradle | cut -d "'" -f 2 | cut -d "-" -f 1)
         - echo "VERSION':'                     ${VERSION}."
     script:
         - helm repo add ${CURRENT_PROJECT_GROUP}'-'helmrepo ${HELM_REPOSITORY}
