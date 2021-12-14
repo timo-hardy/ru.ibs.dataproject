@@ -1,20 +1,16 @@
 package ru.ibs.dataprojects.auth;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.ibs.dataprojects.config.ApplicationUserRole;
-import ru.ibs.dataprojects.model.User;
+import ru.ibs.dataprojects.model.UserProject;
 import ru.ibs.dataprojects.service.impl.UserServiceImpl;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static ru.ibs.dataprojects.config.ApplicationUserRole.MANAGER;
-import static ru.ibs.dataprojects.config.ApplicationUserRole.USER;
 
 
 /**
@@ -45,8 +41,8 @@ public class ApplicationUserDbDao implements ApplicationUserDao {
     }
 
     private List<ApplicationUser> getApplicationUsers() {
-        List<User> userEntities = userService.findAll();
-        List<ApplicationUser> applicationUsers = userEntities
+        List<UserProject> userProjectEntities = userService.findAll();
+        List<ApplicationUser> applicationUsers = userProjectEntities
                 .stream()
                 .map(x -> new ApplicationUser(
                         x.getUsername(),

@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserProject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +21,7 @@ public class User {
     private String password;
     private String role;
 
-    public User(String username, String password, String role) {
+    public UserProject(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;

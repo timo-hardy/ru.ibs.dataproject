@@ -1,6 +1,6 @@
 package ru.ibs.dataprojects.service;
 
-import ru.ibs.dataprojects.model.User;
+import ru.ibs.dataprojects.model.UserProject;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import java.util.List;
 public interface UserService {
     void create(String username, String password, String role);
 
-    List<User> findAll();
+    List<UserProject> findAll();
 
-    User findById(long id);
+    UserProject findById(long id);
 
     void delete(Long id);
 }

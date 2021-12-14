@@ -2,7 +2,7 @@ package ru.ibs.dataprojects.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ibs.dataprojects.model.User;
+import ru.ibs.dataprojects.model.UserProject;
 import ru.ibs.dataprojects.repository.UserRepository;
 import ru.ibs.dataprojects.service.UserService;
 
@@ -18,17 +18,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void create(String username, String password, String role) {
-        final User user = new User(username, password, role);
-        userRepository.save(user);
+        final UserProject userProject = new UserProject(username, password, role);
+        userRepository.save(userProject);
     }
 
     @Override
-    public List<User> findAll() {
+    public List<UserProject> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User findById(long id) {
+    public UserProject findById(long id) {
         return userRepository.findById(id);
     }
 
