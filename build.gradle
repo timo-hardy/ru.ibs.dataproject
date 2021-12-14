@@ -18,9 +18,9 @@ repositories {
 	mavenCentral()
 }
 
-bootJar {
-	launchScript()
-}
+//bootJar {
+//	launchScript()
+//}
 
 jar {
 	enabled = false
