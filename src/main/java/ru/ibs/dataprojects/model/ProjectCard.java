@@ -13,6 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 /**
@@ -27,7 +28,7 @@ public class ProjectCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
     private String status;
-    private LocalDateTime dateOfCardCreation;
+    private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
     @OneToOne(cascade = CascadeType.ALL)

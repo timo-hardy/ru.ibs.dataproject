@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilde
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -16,6 +17,9 @@ public class DataAppConfig {
     //Конфигурация, которая даёт возможность форматировать формат даты и времени
     private static final String dateFormat = "dd-MM-yyyy";
     private static final String dateTimeFormat = "dd-MM-yyyy HH:mm:ss";
+
+//    public static final DateTimeFormatter ISO_FIXED_FORMAT =
+//            DateTimeFormatter.ofPattern("dd-MM-yyyy'T'HH:mm:ss");
 
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
