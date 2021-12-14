@@ -37,7 +37,7 @@ dependencies {
 	implementation group: 'com.google.guava', name: 'guava', version: '28.2-jre'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.5'
-
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.5.5'
 }
 
 test {
