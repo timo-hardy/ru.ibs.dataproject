@@ -83,6 +83,6 @@ deploy helm into openshift:
         - helm repo add ${HELM_REPO} ${HELM_REPO_URL}
         - helm nexus-push ${HELM_REPO} login --username $"NEXUS_USER" --password $"NEXUS_PASSWORD"
         - helm repo update
-        #- helm uninstall ${CI_PROJECT_NAME} --namespace ${PROJECT_GROUP}
+        - helm uninstall ${CI_PROJECT_NAME} --namespace ${PROJECT_GROUP}
         - helm --debug upgrade --install ${CI_PROJECT_NAME} --namespace ${PROJECT_GROUP} ${HELM_REPO}/${CI_PROJECT_NAME} --wait
     stage: deploy helm into openshift
