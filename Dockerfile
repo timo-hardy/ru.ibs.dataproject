@@ -2,7 +2,6 @@ FROM gradle:7.2-jdk17 as builder
 COPY . /usr/myapp
 WORKDIR /usr/myapp
 COPY . .
-
 RUN gradle clean build --no-daemon -P docker -DskipTests
 
 FROM gradle:jdk17 as server
