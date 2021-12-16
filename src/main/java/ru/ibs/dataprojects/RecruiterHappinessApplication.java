@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 public class RecruiterHappinessApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RecruiterHappinessApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RecruiterHappinessApplication.class, args);
+    }
 }

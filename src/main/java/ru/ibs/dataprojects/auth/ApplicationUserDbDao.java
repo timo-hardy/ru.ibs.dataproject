@@ -27,9 +27,6 @@ public class ApplicationUserDbDao implements ApplicationUserDao {
 
         userService.create("manager", "123", "MANAGER");
         userService.create("user", "1234", "USER");
-//        userService.createUser("henry", "password123", "MANAGER");
-//        userService.createUser("emma", "password123", "TRAINEE");
-//        userService.createUser("Boris", "password", "SCRUM_MASTER");
     }
 
     @Override

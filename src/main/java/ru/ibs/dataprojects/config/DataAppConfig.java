@@ -18,9 +18,6 @@ public class DataAppConfig {
     private static final String dateFormat = "dd-MM-yyyy";
     private static final String dateTimeFormat = "dd-MM-yyyy HH:mm:ss";
 
-//    public static final DateTimeFormatter ISO_FIXED_FORMAT =
-//            DateTimeFormatter.ofPattern("dd-MM-yyyy'T'HH:mm:ss");
-
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {
         return builder -> {
