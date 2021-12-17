@@ -3,6 +3,7 @@ package ru.ibs.dataprojects.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -20,6 +21,8 @@ public class ProjectCard {
     private Long cardId;
     private String author;
     private String status;
+    @CreationTimestamp
+    @Column(updatable = false)
     private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
