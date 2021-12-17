@@ -20,7 +20,6 @@ public class ProjectCard {
     private Long cardId;
     private String author;
     private String status;
-    @GeneratedValue
     private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
     private String projectName;
