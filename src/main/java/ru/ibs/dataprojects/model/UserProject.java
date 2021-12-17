@@ -1,8 +1,6 @@
 package ru.ibs.dataprojects.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,7 +8,8 @@ import javax.persistence.*;
  * @author Timur Khidirov on 03.11.2021
  */
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserProject {
