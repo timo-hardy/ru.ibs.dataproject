@@ -23,50 +23,6 @@ class ProjectCardServiceImplTest {
     @Autowired
     private ProjectCardServiceImpl projectCardService;
 
-//    @BeforeEach
-//    void setUp() {
-//        projectCardService = new ProjectCardServiceImpl(
-////                new ProjectCard(
-////                        1L,
-////                        "status",
-////                        LocalDateTime.of(2021, 12, 3, 12, 34, 15),
-////                        "Apple",
-////                        "OS",
-////                        new TypeProject(
-////                                1L,
-////                                true,
-////                                true,
-////                                true,
-////                                true,
-////                                true,
-////                                true,
-////                                true,
-////                                true
-////                        ),
-////                        "sdfsf",
-////                        "sdfsfs",
-////                        "sdfsdfsd",
-////                        "sdfsdfsdf",
-////                        "dsfsdfsdf",
-////                        LocalDate.of(2022, 03, 22),
-////                        "sdfsdffsd",
-////                        "sdfsdfsdf",
-////                        new TypeOfDevelopment(
-////                                1L,
-////                                true,
-////                                true
-////                        ),
-////                        "Sfsdfsdf",
-////                        new Location(1L, true, true, "Address"),
-////                        "fsdlfsdfds",
-////                        true,
-////                        LocalDate.of(2022, 05, 07),
-////                        "asdfsadf",
-////                        true
-////                )
-//        );
-//    }
-
     @Test
     void findByCardId() {
     }
