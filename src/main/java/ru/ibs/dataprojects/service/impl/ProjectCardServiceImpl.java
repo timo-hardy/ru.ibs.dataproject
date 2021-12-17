@@ -1,13 +1,7 @@
 package ru.ibs.dataprojects.service.impl;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.internal.engine.messageinterpolation.parser.MessageDescriptorFormatException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 import ru.ibs.dataprojects.exception.NotFoundException;
 import ru.ibs.dataprojects.model.ProjectCard;
 import ru.ibs.dataprojects.repository.ProjectCardRepository;

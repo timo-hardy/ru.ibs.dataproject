@@ -24,7 +24,6 @@ public class ApplicationUserDbDao implements ApplicationUserDao {
 
     @PostConstruct
     private void postConstruct() {
-
         userService.create("manager", "123", "MANAGER");
         userService.create("user", "1234", "USER");
     }

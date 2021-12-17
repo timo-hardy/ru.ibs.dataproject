@@ -18,6 +18,7 @@ public class ProjectCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
+    private String author;
     private String status;
     private LocalDate dateOfCardCreation;
     private String customerOfTheProject;
