@@ -46,14 +46,13 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
 //                .antMatchers("/api/**").hasRole(MANAGER.name())
 //                .antMatchers(HttpMethod.GET, ).hasAnyRole(MANAGER.name(), USER.name())
-                .antMatchers(HttpMethod.GET,"/api/card/**").hasAnyRole(MANAGER.name(), USER.name())
+                .antMatchers(HttpMethod.GET, "/api/card/**").hasAnyRole(MANAGER.name(), USER.name())
                 .antMatchers("/api/**").hasRole(MANAGER.name())
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin();
     }
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
